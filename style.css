@@ -2,14 +2,22 @@ html {
    height: 100%; /*Aumenta la altura del espacio*/
    }
 body {
-	background-color: #999999;
+            background-color: #CC8F94;
+            background-size: cover;
 	min-height: 100%; /*No reduce la altura del body*/
+}
+
+h1 {
+	background-color: white;
+	text-align: center;
+	font-family:fantasy;
+	color: 
 }
 
 .grid-container {
 	display: grid;
-	/*grid-template-rows: 10% 40% 50% 20% ;*/*
-	grid-template-rows: 6rem 13rem 18rem 10rem ;
+	/*grid-template-rows: 10% 40% 50% 20% ;*/
+	grid-template-rows: auto auto 18rem 10rem;
 	grid-template-columns: 70% 30%;
 	grid-template-areas: 
 	"nav-area       nav-area"
@@ -17,24 +25,67 @@ body {
 	"section-area   aside-area" 
 	"footer-area    footer-area"
 	;
-
-	/*grid-template: 
-	"nav-area       nav-area"   6rem
-	"header-area    header-area"13rem
-	"section-area  aside-area"  18rem
-	"footer-area    footer-area"10rem
-       70%          30%
-	;*/
 }
 
 .grid-gallery{
 	 display: grid;
 	 grid-template-columns: repeat(4, auto); 
 	 grid-template-rows: auto auto;
+	 display: flex;
+	 width: 100%;
+     height: auto;
+	 justify-content: space-around;
+	 flex-wrap: wrap; 
 }
+
+.image{
+	width: 50px;
+	height: 100px;
+	margin-bottom: 10px;
+	object-fit: cover;
+}
+
 nav {
-    background-color: #00b33c;
+    background:
+        linear-gradient(
+               rgba(0,0,0,30%),
+               rgba(0,0,0,20%),
+               rgba(0,0,0,10%)
+        	) no-repeat,
+            url(img/Fondo2.jpg) 20px; 
     grid-area: nav-area;
+}
+
+ul {
+	padding:0px;
+	margin: 0px;
+	list-style: none;
+}
+
+li{
+	display: inline-block;
+	text-align: center
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Architects Daughter';
+	font-size: 20px;
+	color: black;
+	display: block;
+	width:120px;
+	padding: 5px 100px;
+}
+
+a:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.5);
+} 
+.logo {
+	height: 100px;
+	left: 10px;
+	top: 5px;
+	z-index: 1;
 }
 
 /*.mainnav {
@@ -47,32 +98,41 @@ nav {
 
 
 header {
-       background-color: crimson;
+       /*background-color: crimson;*/
        grid-area: header-area;
 }
 
 img {
-    background-color: #6350CA;
+    /*background-color: #6350CA;*/
 }
 
 section {
-        background-color: royalblue;
+        /*background-color: royalblue;*/
         grid-area: section-area;
+        text-align: center;
 }
 
 aside {
-      background-color: #1AC6FF;
+      /*background-color: #1AC6FF;*/
       grid-area: aside-area;
+      text-align: center;   
 }
 
 footer {
-       background-color: palevioletred;
+       /*background-color: palevioletred;*/
        grid-area: footer-area;
+       text-align: center;
+       color: white;
 }
 
-.img1 {
-
+article {
+	text-align: center;
+	
+	width: 50%;
 }
+.img1 {   
+	
+	}
 
 .img2 {
 	grid-column-start: 2;
@@ -89,4 +149,87 @@ footer {
 .img4 {
 	grid-column-start: 1;
 	grid-column-end:3;
+}
+
+
+/*Tablete*/
+@media (max-width:768px)
+{
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+li{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.image{
+	width: 25px;
+	height: 50px;
+	margin-bottom: 10px;
+	object-fit: cover;
+}
+
+
+.grid-gallery{
+	grid-template-columns: repeat(1, auto);
+}
+
+nav {
+    
+}
+	.grid-container {
+	display: grid;
+	/*grid-template-rows: 10% 40% 50% 20% ;*/
+	grid-template-rows: auto auto auto auto;
+	grid-template-columns: 100%;
+	grid-template-areas: 
+	"nav-area"
+	"header-area"
+	"section-area"
+	"aside-area" 
+	"footer-area"
+	;
+}
+
+}
+
+/*Talefono*/
+@media (max-width:320px) 
+{
+	ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  text-align: center;
+}
+
+li{
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.grid-container {
+	display: grid;
+	/*grid-template-rows: 10% 40% 50% 20% ;*/
+	grid-template-rows: auto auto auto a;
+	grid-template-columns: 300%;
+	grid-template-areas: 
+	"nav-area"
+	"header-area"
+	"section-area    aside-area"
+	"footer-area"
+	;
+}
+
 }
